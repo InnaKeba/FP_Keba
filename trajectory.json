@@ -2,10 +2,10 @@
   {
     "agent_name": "supervisor",
     "node": "route",
-    "action": "Які правила повернення коштів за невикористаний період?",
-    "output": "-> researcher: Запит стосується правил повернення коштів, що є довідковим питанням.",
+    "action": "Мій тел +380501234567, email john@test.com. Які правила повернення?",
+    "output": "-> researcher: Користувач запитує про правила повернення, що є довідковим питанням.",
     "tools": [],
-    "timestamp": 1788692839.0877225
+    "timestamp": 1788697426.6454248
   },
   {
     "agent_name": "researcher",
@@ -15,7 +15,7 @@
     "tools": [
       "search_knowledge"
     ],
-    "timestamp": 1788692840.9375381
+    "timestamp": 1788697428.9371896
   },
   {
     "agent_name": "researcher",
@@ -23,58 +23,32 @@
     "action": "Final response",
     "output": "Повернення коштів можливе протягом 14 днів після списання.",
     "tools": [],
-    "timestamp": 1788692841.5559819
+    "timestamp": 1788697429.5508978
   },
   {
     "agent_name": "supervisor",
     "node": "route",
-    "action": "Перевір тікет TKT-002",
-    "output": "-> tech: Запит стосується перевірки тікета (TKT-002), що належить до категорії технічної підтримки.",
+    "action": "Онови статус тікета TKT-001 на resolved. Причина: проблема успішно вирішена",
+    "output": "-> tech: Запит стосується оновлення статусу тікета (TKT-001), що є технічним питанням.",
     "tools": [],
-    "timestamp": 1788692842.5492804
+    "timestamp": 1788697430.3900888
   },
   {
     "agent_name": "tech",
     "node": "tool_call",
-    "action": "get_ticket",
-    "output": "[{'type': 'text', 'text': '{\"id\": \"TKT-002\", \"customer_id\": \"C-101\", \"subject\": \"Не вмикається прист",
+    "action": "update_ticket_status",
+    "output": "[{'type': 'text', 'text': '{\"updated\": \"TKT-001\", \"old_status\": \"open\", \"new_status\": \"resolved\", \"r",
     "tools": [
-      "get_ticket"
+      "update_ticket_status"
     ],
-    "timestamp": 1788692847.6841772
+    "timestamp": 1788697439.8439195
   },
   {
     "agent_name": "tech",
     "node": "generate",
     "action": "Final response",
-    "output": "Тікет TKT-002 стосується проблеми з пристроєм, який не вмикається. Він має середній пріоритет і знаходиться в роботі.",
+    "output": "Статус тікета TKT-001 оновлено на \"resolved\". Причина: проблема успішно вирішена.",
     "tools": [],
-    "timestamp": 1788692848.731999
-  },
-  {
-    "agent_name": "supervisor",
-    "node": "route",
-    "action": "Розрахуй повернення для 500 грн, використано 10 днів",
-    "output": "-> billing: Запит стосується розрахунку повернення коштів, що є питанням, пов'язаним з платежами та рахунками.",
-    "tools": [],
-    "timestamp": 1788692849.75631
-  },
-  {
-    "agent_name": "billing",
-    "node": "tool_call",
-    "action": "calculate_refund",
-    "output": "До повернення: 333.33 грн.",
-    "tools": [
-      "calculate_refund"
-    ],
-    "timestamp": 1788692850.5805328
-  },
-  {
-    "agent_name": "billing",
-    "node": "generate",
-    "action": "Final response",
-    "output": "Сума повернення становить 333.33 грн.",
-    "tools": [],
-    "timestamp": 1788692851.2534468
+    "timestamp": 1788697440.826022
   }
 ]
