@@ -6,6 +6,9 @@ from typing import Annotated, Literal, TypedDict
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
 
+from observability import setup_observability
+setup_observability()
+
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage, ToolMessage
 from langgraph.graph import StateGraph, START, END

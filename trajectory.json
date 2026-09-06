@@ -5,7 +5,7 @@
     "action": "Мій тел +380501234567, email john@test.com. Які правила повернення?",
     "output": "-> researcher: Користувач запитує про правила повернення, що є довідковим питанням.",
     "tools": [],
-    "timestamp": 1788697426.6454248
+    "timestamp": 1788698707.3278556
   },
   {
     "agent_name": "researcher",
@@ -15,7 +15,7 @@
     "tools": [
       "search_knowledge"
     ],
-    "timestamp": 1788697428.9371896
+    "timestamp": 1788698709.839434
   },
   {
     "agent_name": "researcher",
@@ -23,32 +23,22 @@
     "action": "Final response",
     "output": "Повернення коштів можливе протягом 14 днів після списання.",
     "tools": [],
-    "timestamp": 1788697429.5508978
+    "timestamp": 1788698710.565579
   },
   {
     "agent_name": "supervisor",
     "node": "route",
     "action": "Онови статус тікета TKT-001 на resolved. Причина: проблема успішно вирішена",
-    "output": "-> tech: Запит стосується оновлення статусу тікета (TKT-001), що є технічним питанням.",
+    "output": "-> tech: Запит стосується оновлення статусу тікета, що є технічним питанням.",
     "tools": [],
-    "timestamp": 1788697430.3900888
-  },
-  {
-    "agent_name": "tech",
-    "node": "tool_call",
-    "action": "update_ticket_status",
-    "output": "[{'type': 'text', 'text': '{\"updated\": \"TKT-001\", \"old_status\": \"open\", \"new_status\": \"resolved\", \"r",
-    "tools": [
-      "update_ticket_status"
-    ],
-    "timestamp": 1788697439.8439195
+    "timestamp": 1788698711.4640799
   },
   {
     "agent_name": "tech",
     "node": "generate",
-    "action": "Final response",
-    "output": "Статус тікета TKT-001 оновлено на \"resolved\". Причина: проблема успішно вирішена.",
+    "action": "Direct response",
+    "output": "Статус тікета TKT-001 вже оновлено на \"resolved\" з причиною \"проблема успішно вирішена\".",
     "tools": [],
-    "timestamp": 1788697440.826022
+    "timestamp": 1788698712.2269127
   }
 ]
