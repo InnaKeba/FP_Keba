@@ -27,7 +27,7 @@ MAS підключає ізольований FastMCP сервер `mcp_server.p
 5. **HITL:** Перехоплює ризикову дію `update_ticket_status` за допомогою `interrupt()`, вимагаючи підтвердження (`approve`, `reject`, `edit`) від оператора.
 
 ## Observability & Evals завдання експернтого рівня
-* **Трасування:** Усі кроки агентів, виклики інструментів та витрати токенів логуються у LangSmith. *(Див. скріншот виконання у репозиторії).*
+* **Трасування:** Усі кроки агентів, виклики інструментів та витрати токенів логуються у LangSmith. ![LangSmith Trace](langsmith_trace.png)
 * **Scenario Evals:** Проведено тестування 5 сценаріїв (Pass-rate: 100%). Результати збережено у `eval_results.json`.
 * **Red-teaming:** Проведено 5 атак на систему (Prompt Injection, PII Leak, Privilege Escalation). Guardrails успішно заблокували всі вектори атак. Результати у `red_team_results.json`.
 
