@@ -1,0 +1,80 @@
+[
+  {
+    "agent_name": "supervisor",
+    "node": "route",
+    "action": "Які правила повернення коштів за невикористаний період?",
+    "output": "-> researcher: Запит стосується правил повернення коштів, що є довідковим питанням.",
+    "tools": [],
+    "timestamp": 1788692839.0877225
+  },
+  {
+    "agent_name": "researcher",
+    "node": "tool_call",
+    "action": "search_knowledge",
+    "output": "Повернення коштів можливе протягом 14 днів після списання.",
+    "tools": [
+      "search_knowledge"
+    ],
+    "timestamp": 1788692840.9375381
+  },
+  {
+    "agent_name": "researcher",
+    "node": "generate",
+    "action": "Final response",
+    "output": "Повернення коштів можливе протягом 14 днів після списання.",
+    "tools": [],
+    "timestamp": 1788692841.5559819
+  },
+  {
+    "agent_name": "supervisor",
+    "node": "route",
+    "action": "Перевір тікет TKT-002",
+    "output": "-> tech: Запит стосується перевірки тікета (TKT-002), що належить до категорії технічної підтримки.",
+    "tools": [],
+    "timestamp": 1788692842.5492804
+  },
+  {
+    "agent_name": "tech",
+    "node": "tool_call",
+    "action": "get_ticket",
+    "output": "[{'type': 'text', 'text': '{\"id\": \"TKT-002\", \"customer_id\": \"C-101\", \"subject\": \"Не вмикається прист",
+    "tools": [
+      "get_ticket"
+    ],
+    "timestamp": 1788692847.6841772
+  },
+  {
+    "agent_name": "tech",
+    "node": "generate",
+    "action": "Final response",
+    "output": "Тікет TKT-002 стосується проблеми з пристроєм, який не вмикається. Він має середній пріоритет і знаходиться в роботі.",
+    "tools": [],
+    "timestamp": 1788692848.731999
+  },
+  {
+    "agent_name": "supervisor",
+    "node": "route",
+    "action": "Розрахуй повернення для 500 грн, використано 10 днів",
+    "output": "-> billing: Запит стосується розрахунку повернення коштів, що є питанням, пов'язаним з платежами та рахунками.",
+    "tools": [],
+    "timestamp": 1788692849.75631
+  },
+  {
+    "agent_name": "billing",
+    "node": "tool_call",
+    "action": "calculate_refund",
+    "output": "До повернення: 333.33 грн.",
+    "tools": [
+      "calculate_refund"
+    ],
+    "timestamp": 1788692850.5805328
+  },
+  {
+    "agent_name": "billing",
+    "node": "generate",
+    "action": "Final response",
+    "output": "Сума повернення становить 333.33 грн.",
+    "tools": [],
+    "timestamp": 1788692851.2534468
+  }
+]
